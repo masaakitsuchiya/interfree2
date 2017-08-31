@@ -25,9 +25,9 @@ Route::group(['prefix' => 'interviewee'], function() {
   Route::get('register', 'Interviewee\Auth\RegisterController@showRegisterForm')->name('interviewee.register');
   Route::post('register', 'Interviewee\Auth\RegisterController@register')->name('interviewee.register');
  
-  // Route::get('home', 'Interviewee\HomeController@index')->name('interviewee.home');
+  Route::get('home', 'Interviewee\HomeController@index')->name('interviewee.home');
 });
 
-
+Route::resource('corps', 'CorpsController');
 
 Route::get('/home', 'HomeController@index')->name('home');
