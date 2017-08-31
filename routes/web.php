@@ -14,3 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();//これなんだ
+
+Route::group(['prefix' => 'interviewee'], function() {
+  Route::get('login', 'Interviewee\Auth\LoginController@showLoginForm')->name('interviewee.login');
+  Route::post('login', 'Interviewee\Auth\LoginController@login')->name('interviewee.login');
+  Route::get('logout', 'Interviewee\Auth\LoginController@logout')->name('interviewee.logout');
+  
+  Route::get('register', 'Interviewee\Auth\RegisterController@showRegisterForm')->name('interviewee.register');
+  Route::post('register', 'Interviewee\Auth\RegisterController@register')->name('interviewee.register');
+ 
+  // Route::get('home', 'Interviewee\HomeController@index')->name('interviewee.home');
+});
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
