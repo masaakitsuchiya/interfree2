@@ -16,9 +16,9 @@ class CreateCorpsTable extends Migration
         Schema::create('corps', function (Blueprint $table) {
             $table->increments('id');
             $table->string('corp_name', 64);
-            $table->string('address', 128)->unique();
+            $table->string('address', 128);
             $table->string('tel', 64);
-            $table->string('crop_url',255);
+            $table->string('corp_url',255);
             $table->string('corp_mail',255);
             $table->tinyInteger('profile_flg')->unsigned()->default(1);
             $table->tinyInteger('info_text_flg')->unsigned()->default(1);
