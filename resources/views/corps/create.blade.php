@@ -6,8 +6,9 @@
 
 <!--row開始-->
 <div class="row">
- <form class="form-horizontal" method="POST" action="{{ route('corps.store') }}">
+ <form class="form-horizontal" method="POST" action="{{ route('corps.store',$id) }}">
         {{ csrf_field() }}
+         {{ method_field('PUT') }}
 
         <div class="form-group{{ $errors->has('corp_name') ? ' has-error' : '' }}">
             <label for="corp_name" class="col-md-4 control-label">会社名</label>
