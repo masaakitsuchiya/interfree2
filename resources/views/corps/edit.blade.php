@@ -75,7 +75,7 @@
          <div class="form-group">
             <label for="profile-flg" class="col-md-4 control-label">profile機能</label>
             <div class="col-md-6">
-                <select id="profile-flg" class="form-control" id="number" name="profile_flg">
+                <select id="profile-flg" class="form-control" name="profile_flg">
                     <option value="0" selected="<?php if($corp->profile_flg == 0){echo "selected";} ?>">無効</option>
                     <option value="1" selected="<?php if($corp->profile_flg == 1){echo "selected";} ?>">有効</option>
                 </select>
@@ -84,7 +84,7 @@
          <div class="form-group">
             <label for="profile-flg" class="col-md-4 control-label">info_text機能</label>
             <div class="col-md-6">
-                <select id="info_text_flg" class="form-control" id="number" name="info_text_flg">
+                <select id="info_text_flg" class="form-control" name="info_text_flg">
                     <option value="0" selected="<?php if($corp->info_text_flg == 0){echo "selected";} ?>">無効</option>
                     <option value="1" selected="<?php if($corp->info_text_flg == 1){echo "selected";} ?>">有効</option>
                 </select>
@@ -93,7 +93,7 @@
          <div class="form-group">
             <label for="info_photo_flg" class="col-md-4 control-label">info_photo機能</label>
             <div class="col-md-6">
-                <select id="info_photo-flg" class="form-control" id="number" name="info_photo_flg">
+                <select id="info_photo-flg" class="form-control" name="info_photo_flg">
                     <option value="0" selected="<?php if($corp->info_photo_flg == 0){echo "selected";} ?>">無効</option>
                     <option value="1" selected="<?php if($corp->info_photo_flg == 1){echo "selected";} ?>">有効</option>
                 </select>
@@ -102,7 +102,7 @@
         <div class="form-group">
             <label for="info_pdf_flg" class="col-md-4 control-label">info_pdf機能</label>
             <div class="col-md-6">
-                <select id="info_pdf_flg" class="form-control" id="number" name="info_pdf_flg">
+                <select id="info_pdf_flg" class="form-control" name="info_pdf_flg">
                     <option value="0" selected="<?php if($corp->info_pdf_flg == 0){echo "selected";} ?>">無効</option>
                     <option value="1" selected="<?php if($corp->info_pdf_flg == 1){echo "selected";} ?>">有効</option>
                 </select>
@@ -111,7 +111,7 @@
         <div class="form-group">
           <label for="info_video_flg" class="col-md-4 control-label">info_video機能</label>
             <div class="col-md-6">
-                <select id="info_video_flg" class="form-control" id="number" name="info_video_flg">
+                <select id="info_video_flg" class="form-control" name="info_video_flg">
                     <option value="0" selected="<?php if($corp->info_video_flg == 0){echo "selected";} ?>">無効</option>
                     <option value="1" selected="<?php if($corp->info_video_flg == 1){echo "selected";} ?>">有効</option>
                 </select>

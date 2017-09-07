@@ -51,7 +51,8 @@ Auth::routes();//これなんだ
 // Route::group(['middleware' => 'auth:users'], function() {
   
 // });
-Route::resource('users', 'CorpsController');
+Route::resource('users', 'UsersController');
+Route::resource('interviewees', 'IntervieweesController');
 Route::resource('corps', 'CorpsController');
 
 Route::get('/home', 'HomeController@index')->name('home');
