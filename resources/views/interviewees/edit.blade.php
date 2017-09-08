@@ -3,11 +3,10 @@
 @section('content')
 
 <h1 class="text-center">編集</h1>
-
 <div class="row">
  <form class="form-horizontal" method="POST" action="{{ route('interviewees.update',$interviewee->id) }}" enctype="multipart/form-data">
         {{ csrf_field() }}
-        
+        {{ method_field('PUT') }}
 
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
             <label for="name" class="col-md-4 control-label">氏名</label>
@@ -55,7 +54,7 @@
             <label for="password" class="col-md-4 control-label">password</label>
 
             <div class="col-md-6">
-                <input id="password" type="password" class="form-control" name="password" required>
+                <input id="password" type="password" class="form-control" name="password">
 
                 @if ($errors->has('password'))
                     <span class="help-block">
@@ -70,7 +69,8 @@
             <div class="col-md-6">
                 <select id="job_post_id" class="form-control" name="job_post_id">
                     @foreach($job_posts as $job_post)
-                        <option value="{{ $job_post->id }}" selected="<?php if($job_post->id == $interviewee->job_post_id){echo "selected";} ?>">{{ $job_post->job_title }}</option>
+                        <option value="{{ $job_post->id }}">{{ $job_post->job_title }}</option>
+                        <!--<option value="{{ $job_post->id }}" selected="<?php if($job_post->id == $interviewee->job_post_id){echo "selected";} ?>">{{ $job_post->job_title }}</option>-->
                     @endforeach
                 </select>
 

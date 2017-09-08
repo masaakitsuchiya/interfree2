@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <h1 class="text-center">詳細</h1>
 
 <div class="row">
@@ -129,6 +128,11 @@
 <div class="row">
     <div class="col-md-offset-1">
         <a type="button" class="btn btn-primary" href="{{route('interviewees.edit',$interviewee->id)}}">変更</a>
+        <form action="{{ route('interviewees.destroy',$interviewee->id) }}" method="post">
+             {{ method_field('delete') }}
+             {{ csrf_field() }}
+             <input type="submit" class="btn btn-danger" value="削除">
+        </form>
     </div>
 </div>
 

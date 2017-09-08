@@ -88,7 +88,7 @@ class IntervieweesController extends Controller
         if(\Auth::check()){
         $interviewee = Interviewee::find($id);
         if(\Auth::user()->corp_id == $interviewee->corp_id){
-            $job_posts = JobPost::where('id',$interviewee->job_post_id);
+            $job_posts = JobPost::where('corp_id',$interviewee->corp_id)->get();
             return view('interviewees.edit', [
                 'interviewee' => $interviewee,
                 'job_posts'   => $job_posts,
@@ -104,9 +104,11 @@ class IntervieweesController extends Controller
             if($interviewee->corp_id == \Auth::user()->corp_id){
                 $interviewee->name = $request->name;
                 $interviewee->email = $request->email;
-                $interviewee->password = bcrypt($request->$password);
+                if(isset($request->password)){
+                    $interviewee->password = bcrypt($request->password);
+                }
                 $interviewee->name_kana = $request->name_kana;
-                $interviewee->job_post_id = $request->job_post_id;
+                // $interviewee->job_post_id = $interviewee->job_post_id;
                 $interviewee->birthday = $request->birthday;
                 $interviewee->sex = $request->sex;
                 $interviewee->post_code = $request->post_code;
@@ -122,9 +124,15 @@ class IntervieweesController extends Controller
         }
     }
     
-    public function destroy()
+    public function destroy($id)
     {
-        
+        if(\Auth::check()){
+        $interviewee = Interviewee::find($id);
+            if($interviewee->corp_id == \Auth::user()->corp_id){
+                $interviewee->delete();
+                return redirect()->action('IntervieweesController@index');
+            }
+        }
     }
     
 }

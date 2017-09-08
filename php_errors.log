@@ -1,2 +1,6 @@
 [02-Sep-2017 02:39:48 UTC] PHP Warning:  Unknown: php_network_getaddresses: getaddrinfo failed: Name or service not known in Unknown on line 0
 [02-Sep-2017 02:39:57 UTC] PHP Warning:  Unknown: php_network_getaddresses: getaddrinfo failed: Name or service not known in Unknown on line 0
+[08-Sep-2017 07:39:37 Asia/Tokyo] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 78953904 bytes) in /home/ubuntu/workspace/interfree/vendor/laravel/framework/src/Illuminate/View/Concerns/ManagesLayouts.php on line 93
+[08-Sep-2017 07:39:37 Asia/Tokyo] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 79048704 bytes) in /home/ubuntu/workspace/interfree/vendor/symfony/http-foundation/Response.php on line 1266
+[08-Sep-2017 07:39:41 Asia/Tokyo] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 65028096 bytes) in /home/ubuntu/workspace/interfree/storage/framework/views/e85da8c216ebda42bf771ae476ae40edf9f16c46.php on line 4
+[08-Sep-2017 07:39:41 Asia/Tokyo] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 65105920 bytes) in /home/ubuntu/workspace/interfree/vendor/symfony/http-foundation/Response.php on line 371
