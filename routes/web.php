@@ -54,5 +54,18 @@ Auth::routes();//これなんだ
 Route::resource('users', 'UsersController');
 Route::resource('interviewees', 'IntervieweesController');
 Route::resource('corps', 'CorpsController');
+Route::resource('interviews', 'InterviewsController');
+
+Route::group(['prefix' => 'interviews/setting'], function() {
+  Route::get('/style_select/interviewee/{interviewee}/interview_type/{interview_type}', 'InterviewsController@style_select')->name('style_select');
+  // Route::get('/style_select/{interviewee}', 'InterviewsController@style_select')->name('style_select');
+  Route::get('/user_select/{intervivew_style}', 'InterviewsController@user_select')->name('user_select');
+  Route::post('/interview_time_select/', 'InterviewsController@interview_time_select')->name('interview_time_select');
+  Route::post('/interview_setting_confirm/', 'InterviewsController@interview_setting_confirm')->name('interview_setting_confirm');
+  Route::post('/interview_setting_store/', 'InterviewsController@interview_setting_store')->name('interview_setting_store');
+});
+
+Route::resource('interviews','InterviewsController');
+Route::resource('user_lists', 'UserListsController');
 
 Route::get('/home', 'HomeController@index')->name('home');

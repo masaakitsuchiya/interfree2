@@ -35,5 +35,34 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Corp::class);
     }
+    public function interviews()
+    {
+        $interviews = DB::table('interviews')
+                    ->join('user_lists','interviews.id', '=', 'user_lists.interview_id')
+                    ->select('interviews.*')->where('user_lists.user_id', '=', $this->id)->get();
+    }
+    
+    public function user_lists()
+    {
+        return $this->hasMany(UserList::class);
+    }
+    
+    public function users_name($users_id_list)
+    {
+      $users_name_list=[];
+    //   if(is_array($users_id_list)){
+          foreach((array)$users_id_list as $id){
+              $user = User::find($id);
+              array_push($users_name_list, $user->name);
+          }
+    //   }else{
+    //         $user = User::find($users_id_list[0]);
+    //         array_push($users_name_list, $user->name);
+    //     }
+      return $users_name_list;
+      
+    }
+    
     
 }
+

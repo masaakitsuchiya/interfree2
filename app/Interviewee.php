@@ -26,4 +26,10 @@ class Interviewee extends Authenticatable
     {
         return $this->belongsTo(Corp::class);
     }
+    
+    public function interviews()
+    {
+        return $this->hasMany(Interview::class);
+    }
+    
 }
